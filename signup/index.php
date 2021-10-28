@@ -13,6 +13,24 @@
         <form autocomplete="off" method="post" action="signup.inc.php">
             <div class="large">Sign Up</div>
             <div class="border drop-shadow stage1">
+                <div class="user-error small">
+                    <?php
+                    if(isset($_GET["error"])){
+                        $error = $_GET["error"];
+                        if ($error === "empty"){
+                            echo "Please fill out both fields.";
+                        } else if($error === "stmtfailed"){
+                            echo "Something went wrong. Please try again.";
+                        } else if($error === "noexist"){
+                            echo "That username doesn't exist. Please try again.";
+                        } else if($error === "wrongpassword"){
+                            echo "That wasn't the right password. Try again.";
+                        } else if($error === "nomatch"){
+                            echo "That wasn't the right password. Try again.";
+                        }
+                    }
+                    ?>
+                </div>
                 <input class="medium" type="text" name="username" placeholder="Username">
                 <input class="medium" id="password" type="password" name="password" placeholder="Password">
                 <input class="medium" id="passwordrepeat" type="password" name="passwordrepeat" placeholder="Repeat Password">

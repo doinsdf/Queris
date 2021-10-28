@@ -5,15 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
     <?php
-    include_once "connect.inc.php";
-    include_once "header.php";
+    include_once "../connect.inc.php";
+    include_once "../header.php";
     $conn = OpenCon();
-    $query = "SELECT * FROM `queris_posts`";
+
+    if(!isset($_GET["language"])){
+        header("LOCATION: http://localhost");
+        exit();
+    }
+
+
+    $language =$_GET["language"];
+    $query = "SELECT * FROM `post_languages` WHERE '$language'";
     $result = mysqli_query($conn, $query);
     $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -31,7 +39,7 @@
 
     ?>
     <div class="languages" onload="setLanguages()" onscroll="updateLanguages()">
-      <span class="medium languages-selected">Followed By You</span>
+      <a class="toggle medium unfilled" href="http://localhost">Followed By You</a>
       <?php foreach($languages as $language) :?>
         <a class="toggle medium unfilled language" id="<?php echo $language;?>" href="http://localhost/browse?language=<?php echo $language;?>&scroll=0"><?php echo ucwords(str_replace("-", " ", $language));?></a>
       <?php endforeach;?>
@@ -56,6 +64,6 @@
         <span class="small author"><?php echo $post["author"];?></span>
       </div>
     <?php endforeach; ?>
-    <script src="index.js"></script>
+    <script src="../index.js"></script>
 </body>
 </html>

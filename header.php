@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <header class="drop-shadow">
     <span class="logo large">Queris</span>
-    <?php if(isset($_SESSION["userUID"])){?>
+    <?php if(isset($_SESSION["uid"])){?>
     <span class="nav">
         <a href="http://localhost" class="medium nav-link">Home</a>
-        <a class="medium nav-link">Profile</a>
-        <a class="medium nav-link">Log Out</a>
+        <a href="http://localhost/user?myprofile/" class="medium nav-link">Profile</a>
+        <a href="http://localhost/logout/" class="medium nav-link">Log Out</a>
     </span>
     <?php } else {?>
     <span class="nav">

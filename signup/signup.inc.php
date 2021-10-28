@@ -3,6 +3,17 @@ if(isset($_POST["submit"])) {
     $username = $_POST["username"];
     $pwd = $_POST["password"];
     $pwdrepeat = $_POST["passwordrepeat"];
+
+
+
+    if (empty($username) || empty($pwd) || empty($pwdrepeat)) {
+        header("LOCATION: http://localhost/signup/?error=empty");
+        exit();
+    }
+
+    if (!preg_match('/[A-Za-z\d\s]/g', $username)){
+        header("LOCATION: http://localhost/signup/?error=wrongchars");
+    }
     if($pwd !== $pwdrepeat) {
         header("LOCATION: http://localhost/signup/?error=nomatch");
         exit();
@@ -33,7 +44,7 @@ if(isset($_POST["submit"])) {
                     array_push($languages, $key);
                 }
             }
-            $languages = implode("_", $languages);
+            $languages = json_encode($languages);
 
             $pwd_hashed = password_hash($pwd, PASSWORD_DEFAULT);
 

@@ -8,17 +8,20 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <?php include "../header.php"?>
-    <form method="post" action="makepost.php">
+    <?php include "../header.php";
+    if(!isset($_SESSION["uid"])) {
+        header("LOCATION: http://localhost/signup");
+    }?>
+    <form method="post" action="makepost.php" autocomplete="off">
         <div class="center-large isolated">
             <div class="large">Ask a Question</div>
             <div class="drop-shadow border">
                 <div id="post-type">
                     <span class="large">Post Type: </span>
-                    <input type="checkbox" name="Error">
-                    <label class="toggle medium" for="Error">Error</label>
-                    <input type="checkbox" name="Question">
-                    <label class="toggle medium" for="Question">Question</label>
+                    <input type="radio" name="type" value="question" id="question" checked="checked">
+                    <label class="radio filled medium" for="question">Question</label>
+                    <input type="radio" name="type" value="error" id="error">
+                    <label class="radio unfilled medium" for="error">Error</label>
                 </div>
                 <input class="medium" type="text" name="title" placeholder="Post Title: Your question, summed up in about 100 characters.">
                 <textarea class="medium" name="body" placeholder="Post Body: Any elaborations or specifications that will help people better understand your problem and find a solution go here." rows="10"></textarea>
@@ -29,5 +32,6 @@
             </div>
         </div>
     </form>
+    <script src="../index.js"></script>
 </body>
 </html>
