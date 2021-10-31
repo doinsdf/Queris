@@ -20,15 +20,11 @@
     }
 
 
-    $language =$_GET["language"];
-    $query = "SELECT * FROM `post_languages` WHERE '$language'";
+    $language = strtolower($_GET["language"]);
+    $query = "SELECT * FROM `post_languages` WHERE `language` = '$language';";
     $result = mysqli_query($conn, $query);
-    $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $postids = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    if(!isset($_SESSION["uid"])) {
-      include_once "landing.php";
-      exit();
-    }
 
     $username = $_SESSION["uid"];
     $langsql = "SELECT * FROM `queris_users` WHERE `username` = '$username';";
@@ -40,11 +36,21 @@
     ?>
     <div class="languages" onload="setLanguages()" onscroll="updateLanguages()">
       <a class="toggle medium unfilled" href="http://localhost">Followed By You</a>
-      <?php foreach($languages as $language) :?>
-        <a class="toggle medium unfilled language" id="<?php echo $language;?>" href="http://localhost/browse?language=<?php echo $language;?>&scroll=0"><?php echo ucwords(str_replace("-", " ", $language));?></a>
+      <?php foreach($languages as $language) :
+        $urllanguage = str_replace("+", "plus", $language);
+        $urllanguage = str_replace("#", "sharp", $urllanguage);
+        ?>
+        <a class="toggle medium unfilled language" id="<?php echo $urllanguage;?>" href="http://localhost/browse?language=<?php echo $urllanguage;?>&scroll=0"><?php echo ucwords(str_replace("-", " ", $language));?></a>
       <?php endforeach;?>
     </div>
-    <?php foreach($posts as $post) :
+    <?php print_r($posts);?>
+    <?php foreach($postids as $postid) :
+      $postid = $postid["ID"];
+      $postsql = "SELECT * FROM `queris_posts` WHERE `ID` = '$postid';";
+      $postquery = mysqli_query($conn, $postsql);
+      $postresult = mysqli_fetch_all($postquery, MYSQLI_ASSOC);
+      $post = $postresult[0];
+      
       $url_title = $post["ID"];
       $url_title = preg_replace("/[^A-Za-z0-9 ]/", '', $post["title"]);
       $url_title = explode(" ", $url_title);

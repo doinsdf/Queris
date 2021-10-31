@@ -62,8 +62,8 @@ if(browseLanguage !== undefined){
 
 
 function updateLanguages() {
-    for(var i=0; i< languageList.length-1; i++){
-        var language = languageList[i].innerHTML.toLowerCase().replace(" ", "-")
+    for(var i=0; i< languageList.length; i++){
+        var language = languageList[i].innerHTML.toLowerCase().replaceAll(" ", "-").replaceAll("#", "sharp").replaceAll("+", "plus");
         languageList[i].href = "http://localhost/browse?language=" + language + "&scroll=" + languageContainer.scrollLeft;
     }
 }

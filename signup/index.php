@@ -41,7 +41,7 @@
             <div class="border drop-shadow stage2">
                 <div class="large">Choose your languages</div>
                 <div class="medium">You're almost there. Now, just choose the languages you know/want to know more about.</div>
-                <div class="languages">
+                <div class="chooselanguages">
                     <label for="python" class="toggle unfilled">Python</label>
                     <input type="checkbox" name="python" id="python">
                     <label for="c" class="toggle unfilled">C</label>

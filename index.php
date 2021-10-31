@@ -32,8 +32,11 @@
     ?>
     <div class="languages" onload="setLanguages()" onscroll="updateLanguages()">
       <span class="medium languages-selected">Followed By You</span>
-      <?php foreach($languages as $language) :?>
-        <a class="toggle medium unfilled language" id="<?php echo $language;?>" href="http://localhost/browse?language=<?php echo $language;?>&scroll=0"><?php echo ucwords(str_replace("-", " ", $language));?></a>
+      <?php foreach($languages as $language) :
+        $urllanguage = str_replace("+", "plus", $language);
+        $urllanguage = str_replace("#", "sharp", $urllanguage);
+        ?>
+        <a class="toggle medium unfilled language" id="<?php echo $urllanguage;?>" href="http://localhost/browse?language=<?php echo $urllanguage;?>&scroll=0"><?php echo ucwords(str_replace("-", " ", $language));?></a>
       <?php endforeach;?>
     </div>
     <?php foreach($posts as $post) :

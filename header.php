@@ -15,4 +15,5 @@
     </span>
     <?php } ?>
 </header>
+<a href="http://localhost/makeapost" class="question-button border drop-shadow">?</a>
 <script src="https://kit.fontawesome.com/bae64626a1.js" crossorigin="anonymous"></script>

@@ -40,6 +40,13 @@ header {
     margin-left: auto;
 }
 
+.question-button {
+    font-size: 30px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
 .nav-link {
     margin-left: 10px;
     color: #506F7C;
@@ -162,7 +169,7 @@ input[type="checkbox"], input[type="radio"] {
     margin: 5px 0px;
     text-align: center;
 }
-button, input[type="submit"], a.filled {
+button, input[type="submit"] {
     font-size: 30px;
     padding: 20px;
     display: inline-block;

@@ -21,7 +21,7 @@
 
 
     ?>
-    <div class="post drop-shadow border center-large">
+    <div class="post isolated drop-shadow border center-large">
         <span class="upvote-container">
             <button onclick="upvote" class="upvote-button" data-postid="<?php echo $post["UID"];?>">
               <i class="fas fa-arrow-up"></i>
