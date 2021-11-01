@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <header class="drop-shadow">
     <span class="logo large">Queris</span>
+    <input type="text" class="medium" id="searchbox" placeholder="Search for a question...">
     <?php if(isset($_SESSION["uid"])){?>
     <span class="nav">
         <a href="http://localhost" class="medium nav-link">Home</a>

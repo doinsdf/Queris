@@ -15,7 +15,7 @@ if(isset($_POST["submit"])){
     $selectsql = "SELECT * FROM `queris_users` WHERE `username` = '$username';";
     $selectstmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($selectstmt, $selectsql)) {
-        header("LOCATION: http://localhost/login?error=stmtfailed");
+        header("LOCATION: http://localhost/login?error=slstmtfailed");
         exit();
     }
     mysqli_stmt_bind_param($selectstmt, "s", $username);

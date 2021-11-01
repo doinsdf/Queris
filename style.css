@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;600&display=swap');
 
 
 * {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Karla', monospace;
     font-weight: 300;
 }
 
@@ -31,13 +31,15 @@ a {
 header {
     display: flex;
     align-items: center;
-    border: 3px solid #506F7C;
+    /*border: 3px solid #03befc;*/
     border-radius: 0px 0px 40px 40px;
     padding: 20px 40px;
 }
 
-.nav {
-    margin-left: auto;
+
+#searchbox {
+    margin: 0 auto;
+    width: 50%;
 }
 
 .question-button {
@@ -49,7 +51,7 @@ header {
 
 .nav-link {
     margin-left: 10px;
-    color: #506F7C;
+    color: black;
 }
 
 .drop-shadow{
@@ -57,44 +59,43 @@ header {
 }
 
 .border {
-    border: 3px solid #506F7C;
+    /*border: 3px solid #03befc;*/
     box-sizing: border-box;
-    border-radius: 40px;
     background-color: #F6F6F6;
     padding: 20px;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .toggle, .radio {
-    border: 3px solid #506F7C;
+    /*border: 3px solid #03befc;*/
     box-sizing: border-box;
-    border-radius: 40px;
+    border-radius: 20px;
     background-color: #F6F6F6;
     padding: 10px;
-    border-radius: 40px;
+    border-radius: 20px;
     margin: 5px;
     display: inline-block;
     box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.25);
-}
+}*/
 
 .languages-selected {
-    background-color: #506F7C;
+    background-color: #03befc;
     color: #f6f6f6;
-    border-radius: 40px;
-    border: 3px solid #506F7C;
+    border-radius: 20px;
+    /*border: 3px solid #03befc;*/
     box-sizing: border-box;
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 10px;
-    border-radius: 40px;
+    border-radius: 20px;
     margin: 5px;
     display: inline-block;
     box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.25);
 }
 .filled {
-    background-color: #506F7C;
+    background-color: #03befc;
     color: #F6F6F6;
-    border-radius: 40px;
-    border: 3px solid #506F7C;
+    border-radius: 20px;
+    /*border: 3px solid #03befc;*/
 }
 .unfilled {
     color: black;
@@ -116,13 +117,13 @@ header {
 input[type="password"], input[type="text"], textarea {
     resize: none;
     background: #F6F6F6;
-    border: 3px solid #506F7C;
+    border: none;
     box-sizing: border-box;
     box-shadow: inset 0px 4px 10px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
+    border-radius: 20px;
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     margin: 40px 0px;
 }
 input[type="checkbox"], input[type="radio"] {
@@ -209,11 +210,10 @@ button, input[type="submit"] {
     cursor: pointer;
 }
 .fa-arrow-up {
-    color: #F6F6F6;
+    color: black;
     font-size: 40px;
-    background-color: #506F7C;
-    border-radius: 40px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
 }
 .title {
     color: black;

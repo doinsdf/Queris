@@ -5,8 +5,8 @@
 function OpenCon() {
     //information: address, username, password, and database name
     $dbhost = "localhost";
-    $dbuser = "your-username";
-    $dbpass = "your-password";
+    $dbuser = "queris";
+    $dbpass = "1GiraffeOnMe";
     $db = "queris";
 
     //use mysqli built in function to open connection, throw error if it doesn't work

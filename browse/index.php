@@ -35,7 +35,7 @@
 
     ?>
     <div class="languages" onload="setLanguages()" onscroll="updateLanguages()">
-      <a class="toggle medium unfilled" href="http://localhost">Followed By You</a>
+      <a href="http://localhost" class="toggle medium unfilled language">Followed By You</a>
       <?php foreach($languages as $language) :
         $urllanguage = str_replace("+", "plus", $language);
         $urllanguage = str_replace("#", "sharp", $urllanguage);
